@@ -168,7 +168,7 @@ class _TaskPageState extends State<TaskPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tasks'),
+        title: const Text('Task Manager'),
          foregroundColor: Colors.white,
         backgroundColor: const Color(0xFF39131E),
         elevation: 0,
@@ -178,7 +178,8 @@ class _TaskPageState extends State<TaskPage> {
               ? const Center(child: Text('No tasks added yet.'))
               : Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ListView.builder(
+                child:
+                 ListView.builder(
                   itemCount: _tasks.length,
                   itemBuilder: (context, index) {
                     final task = _tasks[index];
@@ -192,10 +193,13 @@ class _TaskPageState extends State<TaskPage> {
                 ),
               ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFF39131E),
+        foregroundColor: Colors.white,
         onPressed: _showAddTaskDialog,
         tooltip: 'Add Task',
         child: const Icon(Icons.add),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
@@ -288,6 +292,24 @@ Widget buildTaskCard(int id, String taskName, String taskDescription, int status
         //     _showAddTaskDialog(id, taskName, taskDescription, status);
         //   },
         // ),
+      ),
+    ),
+  );
+}
+
+Widget buildAddTaskCard() {
+  return Card(
+    color: Colors.grey[200],
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8),
+    ),
+    margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+    child: ListTile(
+      onTap: _showAddTaskDialog,
+      leading: const Icon(Icons.add, size: 40, color: Colors.black54),
+      title: const Text(
+        'Add New Task',
+        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
     ),
   );
