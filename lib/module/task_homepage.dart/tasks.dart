@@ -199,68 +199,6 @@ class _TaskPageState extends State<TaskPage> {
     );
   }
 
-
-// Widget buildTaskCard(int id, String taskName, String taskDescription, int status) {
-//   String getStatusLabel(int status) {
-//     switch (status) {
-//       case 0:
-//         return 'ToDo';
-//       case 1:
-//         return 'On Progress';
-//       case 2:
-//         return 'Pending';
-//       case 3:
-//         return 'Complete';
-//       case 4:
-//       default:
-//         return 'Incomplete';
-//     }
-//   }
-//   Color getStatusColor(int status) {
-//     switch (status) {
-//       case 0:
-//         return Colors.red.withOpacity(0.5);
-//       case 1:
-//         return Colors.yellow.withOpacity(0.5);
-//       case 2:
-//         return Colors.blue.withOpacity(0.5);
-//       case 3:
-//         return Colors.green.withOpacity(0.5);
-//       case 4:
-//       default:
-//         return Colors.grey.withOpacity(0.5);
-//     }
-//   }
-
-//   return Card(
-//     color: getStatusColor(status),
-//     shape: RoundedRectangleBorder(
-//       borderRadius: BorderRadius.circular(8),
-//     ),
-//     child: ListTile(
-//       title: Text(taskName),
-//         subtitle: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             Text(taskDescription),
-//             const SizedBox(height: 4),
-//             Text(
-//               getStatusLabel(status),
-//               style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
-//             ),
-//           ],
-//         ),
-//       onTap: () {
-//         _showAddTaskDialog(id, taskName, taskDescription, status);
-//       },
-//       trailing: IconButton(
-//         icon: const Icon(Icons.delete),
-//         onPressed: () async => await _deleteTask(id),
-//       ),
-//     ),
-//   );
-// }
-
 Widget buildTaskCard(int id, String taskName, String taskDescription, int status) {
   // Helper to get background color based on status
   Color getStatusColor(int status) {
